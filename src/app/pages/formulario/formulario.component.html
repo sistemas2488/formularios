@@ -1,0 +1,21 @@
+<app-nav></app-nav>
+<div class="container">
+    <app-header></app-header>
+    
+    <app-user></app-user>
+    <div class="row">
+        <div class="col-lg-6">
+           
+                <input type="text" name="nombre" [(ngModel)]="this.nuevopromedio.nombre" class="form-control" placeholder="Ingresar nombre"><br>
+                <input type="number" name="corte1" [(ngModel)]="this.nuevopromedio.corte1" class="form-control" placeholder="Ingresar nota corte 1" ><br>
+                <input type="number" name="corte2" [(ngModel)]="this.nuevopromedio.corte2" class="form-control" placeholder="Ingresar nota corte 2" ><br>
+                <input type="number" name="corte3" [(ngModel)]="this.nuevopromedio.corte3" class="form-control" placeholder="Ingresar nota corte 3" ><br>
+                <input type="button" name="btncalcular" class="btn btn-primary" (click)="guardar()" value="Calcular"> 
+            
+        </div>
+        <div class="col-lg-6 text-center">
+            <img src="../../../assets/img/notas.png" alt="" srcset="" class="img-fluid">
+        </div>
+    </div>
+    
+</div>
