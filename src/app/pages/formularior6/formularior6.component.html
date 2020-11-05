@@ -1,0 +1,155 @@
+<app-nav></app-nav>
+<div class="container">
+    <app-header></app-header>
+    
+<p>formularior6 works!</p>
+<div class="row">
+    <div class="col-lg-4">
+        <h4>Evento click</h4>
+        <form [formGroup]="myform1">
+            <p>Ingrese número :
+              <input type="text" class="form-control" formControlName="numero1">
+            </p>
+            <p><button type="submit" (click)="clic(myform1.value)" class="btn btn-primary">Confirmar</button></p>
+        </form>
+       
+    </div>
+
+
+
+
+
+
+
+    <div class="col-lg-4">
+        <h4>Evento doble click</h4>
+        <form [formGroup]="myform2">
+            <p>Ingrese número :
+              <input type="text" class="form-control" formControlName="numero2">
+            </p>
+            <p><button type="submit" (dblclick)="dobleclic(myform2.value)" class="btn btn-primary">Confirmar</button></p>
+        </form>
+       
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-lg-4">
+        <h4>Evento input</h4>
+        <form [formGroup]="myform3">
+            <p>Ingrese palabra :
+              <input type="text" (input)="input($event)"  class="form-control" formControlName="texto">
+
+            </p>
+           <div>{{resultado}}</div>
+        </form>
+       
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-lg-4">
+        <h4>Evento Focus</h4>
+        <form [formGroup]="myform4">
+            <p>Ingrese palabra :
+              <input type="text" (focus)="foco($event)"  class="form-control" formControlName="texto2">
+
+            </p>
+          
+        </form>
+       
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-lg-4">
+        <h4>Evento KeyUp</h4>
+        <form [formGroup]="myform5">
+            <p>Ingrese palabra :
+              <input type="text" (keyup)="up($event)"  class="form-control" formControlName="texto3">
+
+            </p>
+          
+        </form>
+       
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-lg-4">
+        <h4>Evento KeyDown</h4>
+        <form [formGroup]="myform6">
+            <p>Ingrese palabra :
+              <input type="text" (keydown)="down($event)"  class="form-control" formControlName="texto4">
+               
+            </p>
+          
+        </form>
+       
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <h4>Evento Mouse Enter</h4>
+        <form [formGroup]="myform7">
+           <img (mouseenter)="mouseenter($event)" src="https://i.pinimg.com/originals/66/29/c0/6629c094e8e105680a2bd9e20a6a0771.png" class="img-fluid">
+          
+        </form>
+ </div>
+
+
+
+
+
+
+ 
+ <div class="col-lg-4">
+    <h4>Evento Mouse leave</h4>
+    <form [formGroup]="myform8">
+        <img (mouseleave)="mouseleave($event)" src="https://i.pinimg.com/originals/66/29/c0/6629c094e8e105680a2bd9e20a6a0771.png" class="img-fluid">
+   
+      
+    </form>
+
+
+</div>

@@ -1,0 +1,39 @@
+<app-nav></app-nav>
+<div class="container">
+    <app-header></app-header>
+     <app-user></app-user>
+    <p>formularior reactivo3!</p>
+    <div class="row">
+        <div class="col-lg-6">
+            <form [formGroup]="myform" (ngSubmit)="submit()">
+                <p>Ingrese un múltiplo de 2:
+                  <input type="number" class="form-control" formControlName="numero1" >
+                  <span *ngIf="this.myform.get('numero1').errors?.multiplo2">
+                    (El valor debe ser multiplo de 2)
+                  </span>
+                </p>
+                <p>Numero menor que 10:
+                    <input type="number" class="form-control" formControlName="numero2" >
+                    <span *ngIf="this.myform.get('numero2').errors?.menor10">
+                      (El valor debe ser menor que 10)
+                    </span>
+                  </p>
+                  <p>Numero menor que 10:
+                    <input type="number" class="form-control" formControlName="numero3" >
+                    <span *ngIf="this.myform.get('numero3').errors?.mayor0_y_menor1000">
+                      (El valor debe ser entre 1 y 999)
+                    </span>
+                  </p>
+                  <p>Numeros positivos:
+                    <input type="number" class="form-control" formControlName="numero4" >
+                    <span *ngIf="this.myform.get('numero4').errors?.numeropositivo">
+                      (El valor debe ser positivo)
+                    </span>
+                  </p>
+                <button type="submit" class="btn btn-primary" [disabled]="myform.invalid">Confirmar</button>
+              </form>
+        </div>
+        <div class="col-lg-6">
+        </div>
+    </div>
+</div>

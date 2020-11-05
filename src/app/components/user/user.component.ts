@@ -11,7 +11,7 @@ export class UserComponent implements OnInit {
  //lista=null
  lista: any = {};
   constructor(private http: HttpClient) {
-    this.http.get('http://scratchya.com.ar/vue/datos.php') //'assets/json/usuario.json'
+    this.http.get('http://scratchya.com.ar/vue/datos.php') //
     .subscribe(
       result => {
         console.log(result)

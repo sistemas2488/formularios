@@ -1,0 +1,53 @@
+<app-nav></app-nav>
+<div class="container">
+    <app-header></app-header>
+ 
+<p>formularior8 works!</p>
+<div class="row">
+    <div class="col-lg-6">
+        <form [formGroup]="myform" >
+            <div class="form-group">
+                <label for="">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre">
+                <div *ngIf="myform.get('nombre').errors?.required" class="alert alert-primary" role="alert">
+                 El campo nombre es requerido.
+               </div>
+            </div>
+            <div class="form-group">
+                <label for="">email</label>
+                <input type="email" class="form-control" formControlName="correo">
+                <div *ngIf="this.myform.get('correo').errors?.required"class="alert alert-primary" role="alert">
+                     El campo email es requerido.
+                  </div>
+                  <div *ngIf="this.myform.get('correo').errors?.email" class="alert alert-primary" role="alert">
+                    Correo no valido
+                 </div>
+            </div>
+            <div class="form-group">
+                <label for="">Edad</label>
+                <input type="number" class="form-control" formControlName="edad">
+                <div *ngIf="myform.get('edad').errors?.required" class="alert alert-primary" role="alert">
+                    El campo edad es requerido.
+                  </div>
+            </div>
+          
+            <button *ngIf="nuevo" [disabled]="myform.invalid"  (click)="agregar()" class="btn btn-primary">Ingresar   </button>
+            <button *ngIf="!nuevo" [disabled]="myform.invalid"  (click)="editar()" class="btn btn-success">Editar   </button>
+     
+        </form>
+       
+         </div>
+    </div>
+    
+
+    <div class="row">
+        <div *ngFor="let usuario  of persona; let posicion = index" class="col-lg-6">
+            <h4>{{usuario.nombre}} {{posicion}}</h4>
+            <p>{{usuario.correo}}</p>
+            <p>{{usuario.edad}}</p>
+            <button (click)="editarusuario(posicion)" class="btn btn-warning">Editar</button>
+            <button (click)="eliminarusuario(posicion)" class="btn btn-danger">Eliminar</button>
+        </div>
+    </div>
+</div>
+

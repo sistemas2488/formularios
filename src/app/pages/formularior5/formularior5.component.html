@@ -1,0 +1,31 @@
+<app-nav></app-nav>
+<div class="container">
+    <app-header></app-header>
+    
+<p>formularior5 works!</p>
+<div class="row">
+    <div class="col-lg-6">
+        <form [formGroup]="myform" (ngSubmit)="submit(myform.value)">
+            <p>Ingrese número :
+              <input type="text" class="form-control" formControlName="numero">
+            </p>
+            <p>Calcular:<br>
+              <input type="radio" name ="opcion" formControlName="opcion" value="doble" >Doble
+              <input type="radio" name ="opcion" formControlName="opcion" value="triple">Triple
+              <input type="radio" name ="opcion" formControlName="opcion" value="cuadrado">Cuadrado
+              <input type="radio" name ="opcion" formControlName="opcion" value="cubo">Cubo
+            </p>
+            
+            <p><input type="checkbox" formControlName="casilla">validar casilla
+            </p>
+            <p><button type="submit" class="btn btn-primary">Confirmar</button></p>
+        </form>
+        <div>{{resultado}}</div>
+        <div>{{comentario}}</div>
+         </div>
+    </div>
+
+     <div class="col-lg-6">
+    </div>
+</div>
+

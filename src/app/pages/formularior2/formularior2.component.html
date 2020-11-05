@@ -1,0 +1,48 @@
+
+<app-nav></app-nav>
+<div class="container">
+    <app-header></app-header>
+    
+    <app-user></app-user>
+    <p>formularior reactivo2!</p>
+    <div class="row">
+        <div class="col-lg-6">
+          
+<form [formGroup]="myform" (ngSubmit)="submit()">
+    <p>Nombre:
+      <input type="text" class="form-control" formControlName="nombre" required >
+      <span *ngIf="this.myform.get('nombre').errors?.required">
+        (El nombre no puede quedar vacío)
+      </span>
+      <span *ngIf="this.myform.get('nombre').errors?.minlength">
+        (Debe tener como mínimo 10 caracteres)
+      </span>
+    </p>
+    <p>Mail:
+      <input type="text" class="form-control" formControlName="mail">
+      <span *ngIf="this.myform.get('mail').errors?.required">
+        (El mail no puede quedar vacío)
+      </span>
+      <span *ngIf="this.myform.get('mail').errors?.email">
+        (El mail no es válido)
+      </span>
+    </p>
+    <p>Mensaje<br>
+      <textarea class="form-control" rows="10" cols="70" formControlName="mensaje"></textarea>
+    </p>
+    <div *ngIf="this.myform.get('mensaje').errors?.required">
+      (El mensaje no puede quedar vacío)
+    </div>
+    <div *ngIf="this.myform.get('mensaje').errors?.maxlength">
+      (Debe tener como máximo 500 caracteres)
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+  </form>
+  <div>{{resultado}}</div>
+         </div>
+         <div class="col-lg-6">
+        </div>
+    </div>
+</div>
+
+

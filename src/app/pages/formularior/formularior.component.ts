@@ -8,14 +8,17 @@ import { FormBuilder, FormGroup,Validator, Validators } from '@angular/forms';
 })
 export class FormulariorComponent implements OnInit {
 
-  myform:FormGroup  
+  myform:FormGroup  //////
+
   constructor(private _builder:FormBuilder) { 
+
     this.myform=this._builder.group({
-      nombre: ['Bryan',Validators.required]  ,
+      nombre: ['',Validators.required]  ,
       corte1: ['',Validators.required]  ,
       corte2: ['',Validators.required] ,
       corte3: ['',Validators.required]
     })
+
   }
 
   ngOnInit(): void {

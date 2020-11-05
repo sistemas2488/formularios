@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+<div class="container">
+    <app-header></app-header>
+    
+<p>formularior7 works!</p>
+<div class="row">
+    <div class="col-lg-6">
+       <h3>Saldo</h3>
+       <p>El saldo es :{{ saldo | currency:'$'}} pesos colombianos</p>
+       <h3>Minusculas</h3>
+       <p>Nombre del cliente en minúsculas : {{ nombrem | lowercase }}</p>
+       <h3>Mayusculas</h3>
+       <p>Nombre del cliente en minúsculas : {{ nombreM | uppercase  }}</p>
+       <h3>Fecha</h3>
+       <p>Fecha actual : {{ fecha | date:'d/M/y' }}</p>
+       <h3>Mes </h3>
+       <p>Mes sin pandemia: {{ mes | slice:0:2}}</p>
+    </div>
+
+     <div class="col-lg-6">
+        <h3>Porcentaje </h3>
+        <p>Mes sin pandemia: {{ descuento | percent}}</p>
+    </div>
+</div>
+

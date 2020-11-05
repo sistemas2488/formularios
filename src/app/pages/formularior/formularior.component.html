@@ -9,11 +9,11 @@
         <div class="col-lg-6">
             <form [formGroup]="myform" (ngSubmit)="enviar(myform.value)"
             >
-            <input type="text"        formControlName="nombre"       class="form-control" placeholder="Ingresar nombre"><br>
-                <input type="number"  formControlName="corte1" class="form-control" placeholder="Ingresar nota corte 1" ><br>
-                <input type="number"  formControlName="corte2"  class="form-control" placeholder="Ingresar nota corte 2" ><br>
-                <input type="number"  formControlName="corte3" class="form-control" placeholder="Ingresar nota corte 3" ><br>
-                <button type="submit" [disabled]="myform.invalid"  name="btncalcular" class="btn btn-primary" >Calcular</button>
+                <input type="text"    formControlName="nombre"       class="form-control" placeholder="Ingresar nombre"><br>
+                <input type="number"  formControlName="corte1"       class="form-control" placeholder="Ingresar nota corte 1" ><br>
+                <input type="number"  formControlName="corte2"       class="form-control" placeholder="Ingresar nota corte 2" ><br>
+                <input type="number"  formControlName="corte3"       class="form-control" placeholder="Ingresar nota corte 3" ><br>
+                <button type="submit" [disabled]="myform.invalid"    class="btn btn-primary" >Calcular</button>
             </form>
         </div>
         <div class="col-lg-6 text-center">

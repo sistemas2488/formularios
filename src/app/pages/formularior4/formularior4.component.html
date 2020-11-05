@@ -1,0 +1,36 @@
+<app-nav></app-nav>
+<div class="container">
+    <app-header></app-header>
+     <app-user></app-user>
+<p>formularior4 works!</p>
+<div class="row">
+    <div class="col-lg-6">
+ <form [formGroup]="myform" (ngSubmit)="submit(myform.value)">
+<p>Numero 1:
+  <input type="number" class="form-control" formControlName="numero1"  >
+  <span *ngIf="this.myform.get('numero1').errors?.required">
+    (El campo debe ser numero)
+  </span>
+</p>
+<p>Numero 2:
+  <input type="number" class="form-control" formControlName="numero2">
+  <span *ngIf="this.myform.get('numero2').errors?.required">
+    (El campo debe ser numero)
+  </span>
+</p>
+<p>Operacion
+    <select class="form-control" formControlName="operacion">
+        <option>Suma</option>
+        <option>Resta</option>
+        <option>Multiplicacion</option>
+        <option>Division</option>
+    </select>
+</p>
+<button type="submit" class="btn btn-primary">Confirmar</button>
+</form>
+<div>{{resultado}}</div>
+     </div>
+     <div class="col-lg-6">
+    </div>
+</div>
+</div>
